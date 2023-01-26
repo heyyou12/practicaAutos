@@ -12,11 +12,30 @@ interface Auto {
 })
 export class MainPageComponent  {
 
-  carro: Auto []= [];
+  carro: Auto []= [
+    {
+      marca: 'Volkswagen',
+      precio: 50000
+    },
+    {
+      marca: 'Renault',
+      precio: 40000
+    },
+    {
+      marca: 'Mazda',
+      precio: 60000
+    }
+  ];
+
 
   nuevo:Auto = {
     marca: '',
     precio: 0
+  }
+
+  agregar(){
+    this.carro.push(this.nuevo);
+    console.log(this.nuevo);
   }
 
 }

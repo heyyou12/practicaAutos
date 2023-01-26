@@ -3,12 +3,32 @@
 <div class="row">
     <div class="col">
         <h3>Autos</h3>
-        <hr>
+       
         <ul>
-            <li></li>
+            <li *ngFor="let auto of carro">
+                {{auto.marca}} - {{auto.precio}}
+            </li>
         </ul>
     </div>
     <div class="col">
-
+    <div class="col">
+        <form (ngSubmit)="agregar()">
+            <input 
+            type="text"
+            placeholder="Marca"
+            name = "marca"
+            [(ngModel)]="nuevo.marca"    
+            />
+            <input
+            type="number"
+            placeholder="Precio"
+            name="precio"
+            [(ngModel)]="nuevo.precio"
+            />
+            <button type="submit">
+                Agregar
+            </button>
+        </form>
+    </div>
     </div>
 </div>
